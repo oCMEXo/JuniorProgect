@@ -1,4 +1,11 @@
-let a = 'hello'
-for(i = 0; i < a.length; i++){
-    console.log(`hi ${i}`)
+function first(callback) {
+  console.log("Hello");
+  callback();
 }
+
+function second() {
+  console.log("World");
+}
+
+first(second);
+// Сallback function
