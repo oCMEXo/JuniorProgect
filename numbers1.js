@@ -1,11 +1,11 @@
-function first(callback) {
-  console.log("Hello");
-  callback();
-}
+const object = {
+  name: "Shasha",
+  Age: 32,
+  Car: "Pego",
+};
 
-function second() {
-  console.log("World");
-}
+console.log(object);
 
-first(second);
-// Сallback function
+delete object.Car;
+
+console.log(object);
