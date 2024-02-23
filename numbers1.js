@@ -2,10 +2,15 @@ const object = {
   name: "Shasha",
   Age: 32,
   Car: "Pego",
+  Hate: 180,
+  weigth: 80,
 };
 
-console.log(object);
+for (let key in object) {
+  console.log(`Свойство ${key} имеет значение ${object[key]}`);
+}
 
-delete object.Car;
+console.log(Object.keys(object).length);
 
-console.log(object);
+const { name, Age } = object;
+console.log(name, Age);
