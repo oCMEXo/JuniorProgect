@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+    <link rel="stylesheet" href="second.css" />
+  </head>
+  <body>
+    <h1>This is a Heading</h1>
+    <p>This is a paragraph.</p>
+    <input
+      type="text"
+      id="numberInput"
+      maxlength="6"
+      placeholder="Введите 6 цифр"
+    />
+    <button onclick="checkSum()">Проверить сумму</button>
+    <p id="result"></p>
+    <script>
+      function checkSum() {
+        var input = document.getElementById("numberInput").value;
+        if (input.length !== 6 || !/^\d+$/.test(input)) {
+          alert("Пожалуйста, введите 6 цифр.");
+          return;
+        }
+
+        var firstSum =
+          parseInt(input[0]) + parseInt(input[1]) + parseInt(input[2]);
+        var secondSum =
+          parseInt(input[3]) + parseInt(input[4]) + parseInt(input[5]);
+
+        var resultElement = document.getElementById("result");
+        if (firstSum === secondSum) {
+          resultElement.textContent =
+            "Сумма первых трех цифр равна сумме вторых трех цифр.";
+        } else {
+          resultElement.textContent =
+            "Сумма первых трех цифр НЕ равна сумме вторых трех цифр.";
+        }
+      }
+    </script>
+  </body>
+</html>
